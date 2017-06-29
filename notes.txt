@@ -1,0 +1,36 @@
+0. Jupyter notebook tutorial at: 
+https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.=Yh6bMM
+
+1. download and install anaconda3
+
+2. set env to point to anaconda3 install 
+# Set anaconda 3 first
+export PATH="/home/map/anaconda3/bin:$PATH"
+
+3. run jupyter
+	jupyter notebook
+
+3a. run jupyter on a specific port 
+	jupyter notebook --port 9999
+
+3b. start jupyter without opening a browser
+	jupyter notebook --no-browser
+
+3c. jupyter help
+	jupyter notebook --help
+
+3d. run via docker
+	docker run --rm -it -p 8888:8888 -v "$(pwd):/notebooks" jupyter/notebook 
+
+
+You can easily create a new conda environment to use different notebook kernels:
+
+# Python 2.7
+conda create -n py27 python=2.7 ipykernel
+# Python 3.5
+conda create -n py35 python=3.5 ipykernel
+
+Restart the application and the two kernels should be available to you. Very important: don't forget to (de)activate the kernel you (don't) need with the following commands:
+
+source activate py27
+source deactivate
